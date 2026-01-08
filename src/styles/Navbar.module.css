@@ -1,0 +1,46 @@
+.ulCategorias{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    background-color: rgb(62, 61, 61);
+}
+
+.ulCategorias a{
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.5rem;
+    &:hover{
+        background-color: rgb(35, 34, 34);
+    }
+}
+
+.logoNavbar{
+    width: 80px;
+}
+
+.btnCartWidget{
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.divCartWidget{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
