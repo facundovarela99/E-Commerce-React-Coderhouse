@@ -1,5 +1,7 @@
 # React + Vite
 
+# PROFE: Al ejecutar 'npm run dev' en el codespace, antes haga npm install, porque no se porque razón no va a encontrar los paquetes de módulos si no se ejecuta, siendo que seguí todos los pasos que indicaste.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
