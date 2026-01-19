@@ -10,6 +10,7 @@ export function Navbar(){
             <li><a href=''>Aventura</a></li>
             <li><a href=''>Terror</a></li>
             <li><a href=''>Estrategia</a></li>
+            <li><a href="">Iniciar sesión</a></li>
             <li>
                 <button className={styles.btnCartWidget}>
                     <div className={styles.divCartWidget}>3</div>
