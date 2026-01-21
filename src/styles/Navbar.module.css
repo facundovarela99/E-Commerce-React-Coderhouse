@@ -18,6 +18,21 @@
     }
 }
 
+.ulCategorias button{
+    font-size: 1.4rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    &:hover{
+        background-color: rgb(211, 211, 211);
+    }
+}
+
+.ulCategorias input{
+    font-size: 1.4rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
 .logoNavbar{
     width: 80px;
 }
