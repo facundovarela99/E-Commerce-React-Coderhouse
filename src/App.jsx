@@ -3,12 +3,19 @@ import { Navbar } from './components/navbar.jsx'
 import { Footer } from './components/footer.jsx'
 import { ItemListContainer } from './components/itemListContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { About } from './components/about.jsx'
 
 function App() {
-  return(
+  return (
     <div className='divRootHijo1'>
-      <Navbar></Navbar>
-      <ItemListContainer texto="Texto del componente ItemListContainer"></ItemListContainer>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path="/home" element={<ItemListContainer />} />
+          <Route path="/about" element={<About />} />
+          {/* <ItemListContainer texto="Texto del componente ItemListContainer"></ItemListContainer> */}
+        </Routes>
+      </BrowserRouter>
       <Footer texto="Una promesa es un objeto asíncrono"></Footer>
     </div>
   )

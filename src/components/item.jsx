@@ -13,6 +13,7 @@ export function Item({videojuego}) {
             </figure>
             <div className={styles.cardGameBody}>
                 <h2 className="card-title text-2xl">{videojuego.name}</h2>
+                <p>{videojuego.id}</p>
                 <p>{videojuego.released}</p>
                 <p>{videojuego.rating}</p>
                 <div className="card-actions justify-end">
