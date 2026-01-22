@@ -1,13 +1,14 @@
 import styles from '../styles/Navbar.module.css'
 import logo from "../assets/lorem-ipsum-logo-png_seeklogo-543371.png"
 import cartWidget from '../assets/shopping-cart.png'
+import { Link } from 'react-router-dom'
 
 export function Navbar() {
     return (
         <ul className={styles.ulCategorias}>
             <li><button><img className={styles.logoNavbar} src={logo} alt="Logo página inicio"/></button></li>
-            <li><button>Home</button></li>
-            <li><button>About</button></li>
+            <li><button><Link to={`/`}>Home</Link></button></li>
+            <li><button><Link to={`/about`}>About</Link></button></li>
             <li><button>Iniciar sesión</button></li>
             <li>
                 <input type="text" placeholder='Videojuego' className='bg-white' />
