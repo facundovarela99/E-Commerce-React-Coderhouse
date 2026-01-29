@@ -19,7 +19,7 @@ export function Item({videojuego}) {
                 <p>{videojuego.rating}</p>
                 <div className="card-actions justify-end">
                 </div>
-                    <button className={styles.btnViewMore}><Link to={`/game/${videojuego.id}`}>Ver mas</Link></button>
+                    <button className={styles.btnViewMore}><Link className='p-5' to={`/game/${videojuego.id}`}>Ver mas</Link></button>
             </div>
         </div>
     )
