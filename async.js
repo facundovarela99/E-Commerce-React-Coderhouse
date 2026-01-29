@@ -26,6 +26,13 @@ export async function obtenerGeneros(){
     return generos.results;
 }
 
-const generos = await obtenerGeneros();
+export async function obtenerDetalleGenero(id){
+    const response = await fetch(`https://api.rawg.io/api/genres/${id}?key=${API_KEY}`);
+    const data = await response.json();
+    return data;
+}
 
-console.log(generos);
+//Generar un GenreContainer, que dentro tenga la lógica que llame al genero clickeado en la navbar, traiga su descripción, y en lo posible, los juegos de ese género.
+
+const genero = await obtenerDetalleVideojuego(1);
+console.log(genero.genres)
