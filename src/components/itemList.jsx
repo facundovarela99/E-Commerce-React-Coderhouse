@@ -5,8 +5,8 @@ export function ItemList({items}){
     return(
     <div className={styles.divItemListContainer}>
             <div className={styles.divGames}>
-                {items.map(videojuego => (
-                    <Item videojuego={videojuego} key={videojuego.id}></Item>
+                {items.map(producto => (
+                    <Item producto={producto} key={producto.id}></Item>
                 ))}
             </div>
         </div>

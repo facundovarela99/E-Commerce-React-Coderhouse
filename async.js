@@ -32,7 +32,12 @@ export async function obtenerDetalleGenero(id){
     return data;
 }
 
+fetch('https://dummyjson.com/products/categories')
+.then(res => res.json())
+.then(console.log);
 //Generar un GenreContainer, que dentro tenga la lógica que llame al genero clickeado en la navbar, traiga su descripción, y en lo posible, los juegos de ese género.
 
-const genero = await obtenerDetalleVideojuego(1);
-console.log(genero.genres)
+// const genero = await obtenerDetalleGenero(1);
+// console.log(genero);
+
+// const generos = await obtenerGeneros();

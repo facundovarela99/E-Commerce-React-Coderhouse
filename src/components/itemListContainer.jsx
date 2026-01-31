@@ -1,17 +1,35 @@
 import { useState, useEffect } from 'react';
 import { ItemList } from './itemList.jsx';
-import { API_KEY } from '../../api.js';
-import { obtenerVideojuegos } from '../../async.js';
+import { useParams } from 'react-router-dom';
+
+
 
 export function ItemListContainer(){
     
   const [items, setItems] = useState([]);
 
-    useEffect(()=> {
-      obtenerVideojuegos()
-        .then(res=> setItems(res))
-        .catch(error => console.log(error))
-    }, [])
+  const {nombreCategoria} = useParams();
+
+  useEffect(()=>{
+
+    const url_productos = 'https://dummyjson.com/products'
+    const url_categorias = `https://dummyjson.com/products/category/${nombreCategoria}`
+
+    fetch(nombreCategoria ? url_categorias : url_productos)
+    .then(res => res.json())
+    .then(data => setItems(data.products));
+
+    // const fetchData = async ()=>{
+    //   try{
+    //     const response = await fetch(nombreCategoria ? url_categorias : url_productos);
+    //     const data =  await response.json();
+    //     setItems(data.products);
+    //   }catch(error){
+    //     console.error(error)
+    //   }
+    // };
+    // fetchData();
+  }, [nombreCategoria])
 
     return <ItemList items={items}/>
 }
