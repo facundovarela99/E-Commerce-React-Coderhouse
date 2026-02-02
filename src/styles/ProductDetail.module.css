@@ -1,0 +1,13 @@
+.imgProductDetail{
+    width: 280px;
+}
+
+.divProductoDetail{
+    background-color: rgb(81, 81, 81);
+}
+
+.divBotonesCarrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom'
 import styles from '../styles/ItemListContainer.module.css'
-
-// const placeholder = 'https://tse4.mm.bing.net/th/id/OIP.Pneh22uyXw_rJ8leBae8VwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3'
-
+import { useNavigate } from 'react-router-dom'
 
 export function Item({producto}) {
+    const navigate = useNavigate();
+
     return (
         <div className={styles.divGame}>
             <figure className={styles.figure}>
-                <img className={styles.imgGame}
-                    src={producto.images[0]}
-                    alt={producto.title} />
+                {producto 
+                ? (<img className={styles.imgGame} src={producto.images[0]} alt={producto.title} />) 
+                : <div className="skeleton h-32 w-32"></div>}
+                
             </figure>
             <div className={styles.cardGameBody}>
-                <h2 className="card-title text-2xl">{producto.title}</h2>
-                <p>{producto.id}</p>
-                <p>{producto.price}</p>
+                <h1 className="card-title text-2xl pt-2">{producto.title}</h1>
+                <p className='pt-2'>${producto.price}</p>
+                <p className='pt-2'>{producto.description}</p>
                 <div className="card-actions justify-end">
+                    <button className={styles.btnViewMore} onClick={()=> navigate(`/producto/${producto.id}`)}>Ver mas</button>
                 </div>
-                    <button className={styles.btnViewMore}><Link className='p-5' to={`/producto/${producto.id}`}>Ver mas</Link></button>
             </div>
         </div>
     )

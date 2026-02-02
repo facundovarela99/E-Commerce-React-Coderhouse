@@ -48,8 +48,8 @@ export function Navbar() {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><button><Link to={`/`}>Home</Link></button></li>
-                    <li><button><Link to={`/about`}>About</Link></button></li>
+                    <li><Link to={`/`}>Home</Link></li>
+                    <li><Link to={`/about`}>About</Link></li>
                     <li>
                         <details>
                             <summary>Categorias</summary>
@@ -59,10 +59,6 @@ export function Navbar() {
                                 ))}
                             </ul>
                         </details>
-                    </li>
-                    <li className='d-flex flex-row'>
-                        <input type="text" placeholder='Videojuego' name='inputVideojuego' />
-                        <button type='submit'>Buscar</button>
                     </li>
                 </ul>
             </div>

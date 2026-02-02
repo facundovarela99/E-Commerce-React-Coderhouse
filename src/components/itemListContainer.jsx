@@ -18,17 +18,6 @@ export function ItemListContainer(){
     fetch(nombreCategoria ? url_categorias : url_productos)
     .then(res => res.json())
     .then(data => setItems(data.products));
-
-    // const fetchData = async ()=>{
-    //   try{
-    //     const response = await fetch(nombreCategoria ? url_categorias : url_productos);
-    //     const data =  await response.json();
-    //     setItems(data.products);
-    //   }catch(error){
-    //     console.error(error)
-    //   }
-    // };
-    // fetchData();
   }, [nombreCategoria])
 
     return <ItemList items={items}/>

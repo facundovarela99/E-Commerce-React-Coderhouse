@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<ItemListContainer />}/>
           <Route path='/categoria/:nombreCategoria' element={<ItemListContainer/>}/> 
           <Route path="/producto/:id" element={<ProductDetail />} />
-          <Route path="/Sobre nosotros" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
       <Footer texto="Una promesa es un objeto asíncrono"></Footer>
