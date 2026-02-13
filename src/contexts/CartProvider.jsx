@@ -1,4 +1,4 @@
-import {CartContext} from './CartContext'
+import {CartContext} from './CartContext.jsx'
 import { useState } from 'react'
 
 export function CartProvider({children}){
@@ -10,17 +10,20 @@ export function CartProvider({children}){
             SetCart([...cart, producto])
         } else {
             const updatedCart = cart.map(item => {
-                if (item.id === producto.id) return {...item, quantity: item.count + producto.quantity}
+                if (item.id === producto.id) return {...item, quantity: item.quantity + producto.quantity}
                 return item
             })
             SetCart(updatedCart)
         }
-        console.log('Carrito: ', cart);
-        console.log('Producto: ', producto)
+    }
+
+    const GetTotalProducts = () =>{
+        const totalQuantity = cart.reduce((acc, current) => acc + current.quantity, 0);
+        return totalQuantity
     }
 
     return(
-        <CartContext.Provider value={{addToCart}}>
+        <CartContext.Provider value={{addToCart, GetTotalProducts}}>
             {children}
         </CartContext.Provider>
     )

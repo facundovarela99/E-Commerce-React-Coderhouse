@@ -1,15 +1,20 @@
 import { useEffect } from "react";
+import { useContext, useState } from 'react'
+import {CartContext} from '../contexts/CartContext.jsx'
 
-export function Counter({counter, setCounter}){
+export function Counter({producto}){
+
+    const [counter, setCounter] = useState(0);
+    const {addToCart} = useContext(CartContext);
+
+    const handlerAddToCart = () => addToCart({...producto, quantity: counter})
 
     const handlerSuma = ()=> setCounter(counter + 1);
     
     const handlerResta = ()=> setCounter(counter - 1);
 
     useEffect(()=>{
-        console.log('se ejecutó el efecto')
         return ()=>{
-            console.log('se desmontó')
         }
     }, [counter])
 
@@ -19,6 +24,7 @@ export function Counter({counter, setCounter}){
             <div className="flex place-content-evenly">
             <button onClick={handlerSuma} className="bg-green-500 px-8 py-3"><strong>+</strong></button>
             <button onClick={handlerResta} className="bg-red-500 px-8 py-3"><strong>-</strong></button>
+            <button className="btn btn-primary" onClick={handlerAddToCart}>Agregar al carrito</button>
             </div>
         </div>
     )
