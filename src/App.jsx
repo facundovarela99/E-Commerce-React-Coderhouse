@@ -1,11 +1,10 @@
 import './App.css'
-import { Navbar } from './components/navbar.jsx'
+import { Navbar } from './components/Navbar.jsx'
 import { Footer } from './components/footer.jsx'
 import { ItemListContainer } from './components/itemListContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { About } from './components/about.jsx'
 import { ProductDetail } from './components/productDetail.jsx'
-// import { useState, useEffect } from 'react'
 
 function App() {
   return (

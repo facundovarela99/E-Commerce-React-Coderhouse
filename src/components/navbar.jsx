@@ -1,9 +1,8 @@
 import styles from '../styles/Navbar.module.css'
 import logo from "../assets/lorem-ipsum-logo-png_seeklogo-543371.png"
-import cartWidget from '../assets/shopping-cart.png'
 import { Link } from 'react-router-dom'
-import { ItemListContainer } from './itemListContainer.jsx';
 import { useEffect, useState } from 'react';
+import { CartWidget } from './CartWidget.jsx';
 
 
 export function Navbar() {
@@ -63,11 +62,7 @@ export function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Iniciar sesión</a>
-                <button className={styles.btnCartWidget}>
-                    <div className={styles.divCartWidget}>3</div>
-                    <img src={cartWidget} alt="Carrito de productos agregados" style={{ width: "32px", height: "32px" }} />
-                </button>
+                <CartWidget/>
             </div>
         </div>
     )

@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-export function Counter(){
-    const [counter, setCounter] = useState(0);
+export function Counter({counter, setCounter}){
 
     const handlerSuma = ()=> setCounter(counter + 1);
     

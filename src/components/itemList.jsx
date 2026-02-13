@@ -1,5 +1,5 @@
 import styles from '../styles/ItemListContainer.module.css'
-import { Item } from './item.jsx'
+import { Item } from './Item.jsx'
 
 export function ItemList({items}){
     return(
